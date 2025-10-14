@@ -20,7 +20,7 @@ namespace Warslammer.Combat
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<DiceRoller>();
+                    _instance = FindFirstObjectByType<DiceRoller>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("DiceRoller");

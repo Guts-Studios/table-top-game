@@ -21,7 +21,7 @@ namespace Warslammer.Combat
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<MoraleSystem>();
+                    _instance = FindFirstObjectByType<MoraleSystem>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("MoraleSystem");

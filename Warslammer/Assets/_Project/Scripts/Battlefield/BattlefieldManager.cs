@@ -25,7 +25,7 @@ namespace Warslammer.Battlefield
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<BattlefieldManager>();
+                    _instance = FindFirstObjectByType<BattlefieldManager>();
                 }
                 return _instance;
             }

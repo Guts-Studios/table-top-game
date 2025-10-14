@@ -21,7 +21,7 @@ namespace Warslammer.Combat
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<DamageCalculator>();
+                    _instance = FindFirstObjectByType<DamageCalculator>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("DamageCalculator");

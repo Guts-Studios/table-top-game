@@ -25,7 +25,7 @@ namespace Warslammer.Combat
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<CombatResolver>();
+                    _instance = FindFirstObjectByType<CombatResolver>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("CombatResolver");

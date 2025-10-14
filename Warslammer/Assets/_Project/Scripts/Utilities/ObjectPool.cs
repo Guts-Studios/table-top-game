@@ -1,8 +1,33 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Warslammer.Utilities
 {
+    /// <summary>
+    /// Singleton MonoBehaviour host for running coroutines
+    /// Used by ObjectPool for delayed operations
+    /// </summary>
+    public class CoroutineHost : MonoBehaviour
+    {
+        private static CoroutineHost _instance;
+
+        public static CoroutineHost Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    GameObject go = new GameObject("CoroutineHost");
+                    _instance = go.AddComponent<CoroutineHost>();
+                    DontDestroyOnLoad(go);
+                }
+                return _instance;
+            }
+        }
+    }
+
     /// <summary>
     /// Generic object pooling system for performance optimization
     /// Reduces garbage collection by reusing objects
@@ -131,10 +156,10 @@ namespace Warslammer.Utilities
             if (obj == null)
                 return;
             
-            obj.StartCoroutine(ReturnAfterDelayCoroutine(obj, delay));
+            CoroutineHost.Instance.StartCoroutine(ReturnAfterDelayCoroutine(obj, delay));
         }
 
-        private System.Collections.IEnumerator ReturnAfterDelayCoroutine(T obj, float delay)
+        private IEnumerator ReturnAfterDelayCoroutine(T obj, float delay)
         {
             yield return new WaitForSeconds(delay);
             Return(obj);
@@ -147,12 +172,12 @@ namespace Warslammer.Utilities
         /// </summary>
         private T CreateNewObject()
         {
-            T obj = Object.Instantiate(_prefab, _parent);
+            T obj = UnityEngine.Object.Instantiate(_prefab, _parent);
             obj.gameObject.SetActive(false);
-            
+
             _allObjects.Add(obj);
             _availableObjects.Enqueue(obj);
-            
+
             return obj;
         }
 
@@ -182,9 +207,9 @@ namespace Warslammer.Utilities
             foreach (T obj in _allObjects)
             {
                 if (obj != null)
-                    Object.Destroy(obj.gameObject);
+                    UnityEngine.Object.Destroy(obj.gameObject);
             }
-            
+
             _allObjects.Clear();
             _availableObjects.Clear();
         }

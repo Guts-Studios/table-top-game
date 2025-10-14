@@ -318,7 +318,16 @@ namespace Warslammer.Units
                 return;
 
             float healthPercent = _unit.HealthPercentage;
-            
+
+            // Guard against NaN values (can happen if unit has no stats yet)
+            if (float.IsNaN(healthPercent) || float.IsInfinity(healthPercent))
+            {
+                healthPercent = 1f; // Default to full health if stats not initialized
+            }
+
+            // Clamp to valid range
+            healthPercent = Mathf.Clamp01(healthPercent);
+
             // Scale fill based on health percentage
             Vector3 fillScale = _healthBarFill.transform.localScale;
             fillScale.x = healthPercent;

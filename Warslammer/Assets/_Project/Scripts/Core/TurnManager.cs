@@ -22,7 +22,7 @@ namespace Warslammer.Core
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<TurnManager>();
+                    _instance = FindFirstObjectByType<TurnManager>();
                 }
                 return _instance;
             }

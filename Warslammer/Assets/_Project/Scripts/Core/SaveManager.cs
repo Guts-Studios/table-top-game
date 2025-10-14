@@ -21,7 +21,7 @@ namespace Warslammer.Core
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<SaveManager>();
+                    _instance = FindFirstObjectByType<SaveManager>();
                 }
                 return _instance;
             }

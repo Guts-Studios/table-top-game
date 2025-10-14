@@ -54,7 +54,7 @@ namespace Warslammer.Battlefield
         private Unit _currentUnit;
         private Vector3 _targetPosition;
         private bool _isActive;
-        private ObjectPool<GameObject> _markPool;
+        private ObjectPool<MeasurementMarker> _markPool;
         #endregion
 
         #region Unity Lifecycle
@@ -96,11 +96,18 @@ namespace Warslammer.Battlefield
             // Initialize mark pool
             if (_measurementMarkPrefab != null)
             {
-                _markPool = new ObjectPool<GameObject>(
-                    () => Instantiate(_measurementMarkPrefab, _marksContainer),
-                    (obj) => obj.SetActive(true),
-                    (obj) => obj.SetActive(false),
-                    20
+                // Ensure the prefab has a MeasurementMarker component
+                MeasurementMarker markerPrefab = _measurementMarkPrefab.GetComponent<MeasurementMarker>();
+                if (markerPrefab == null)
+                {
+                    markerPrefab = _measurementMarkPrefab.AddComponent<MeasurementMarker>();
+                }
+                
+                _markPool = new ObjectPool<MeasurementMarker>(
+                    markerPrefab,
+                    _marksContainer,
+                    20,
+                    100
                 );
             }
         }
@@ -186,9 +193,9 @@ namespace Warslammer.Battlefield
                 Vector3 markPosition = startPosition + direction * distance;
                 markPosition.y = 0.15f; // Slightly above ground
 
-                GameObject mark = _markPool.Get();
-                mark.transform.position = markPosition;
-                mark.transform.rotation = Quaternion.Euler(90, 0, 0); // Face up
+                MeasurementMarker marker = _markPool.Get();
+                marker.transform.position = markPosition;
+                marker.transform.rotation = Quaternion.Euler(90, 0, 0); // Face up
             }
         }
 

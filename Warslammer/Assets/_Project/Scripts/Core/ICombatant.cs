@@ -15,7 +15,7 @@ namespace Warslammer.Core
         /// <summary>
         /// Current attack value
         /// </summary>
-        int Attack { get; }
+        int AttackValue { get; }
 
         /// <summary>
         /// Current defense value

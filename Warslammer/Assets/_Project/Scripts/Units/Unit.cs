@@ -299,7 +299,7 @@ namespace Warslammer.Units
         /// <summary>
         /// Current attack value
         /// </summary>
-        public int Attack => _stats?.Attack ?? 0;
+        public int AttackValue => _stats?.Attack ?? 0;
 
         /// <summary>
         /// Current defense value

@@ -22,7 +22,7 @@ namespace Warslammer.Combat
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<RangeCalculator>();
+                    _instance = FindFirstObjectByType<RangeCalculator>();
                     if (_instance == null)
                     {
                         GameObject go = new GameObject("RangeCalculator");

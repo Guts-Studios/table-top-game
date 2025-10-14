@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e9b7416df35644e90e47a777b300f0, type: 3}
+  m_Name: Weapon_Sword
+  m_EditorClassIdentifier: Assembly-CSharp::Warslammer.Combat.WeaponData
+  weaponName: Sword
+  description: A balanced melee weapon. Reliable damage output with moderate range.
+  icon: {fileID: 0}
+  rangeType: 0
+  minRangeInches: 0
+  maxRangeInches: 1
+  attackDice: 2
+  toHitTarget: 4
+  baseDamage: 3
+  armorPenetration: 0
+  damageSource: 0
+  allowsCriticals: 1
+  ignoresCover: 0
+  unblockable: 0
+  hasBlast: 0
+  blastRadius: 0
+  hasBonusVsType: 0
+  bonusVsUnitType: 0
+  bonusDamageAmount: 1
+  canInflictBleed: 0
+  bleedChance: 0.2
+  canInflictRooted: 0
+  rootedChance: 0.2
+  rerollOnes: 0
+  rerollFailed: 0
+  attackModifier: 0
+  requiresTwoHands: 0
+  limitedUse: 0
+  usesPerBattle: 0

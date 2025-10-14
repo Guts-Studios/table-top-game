@@ -91,15 +91,23 @@ namespace Warslammer.Battlefield
         {
             _terrainObjects.Clear();
 
-            // Find all GameObjects tagged as "Terrain"
-            GameObject[] terrainGOs = GameObject.FindGameObjectsWithTag("Terrain");
-            
-            foreach (GameObject terrainGO in terrainGOs)
+            // Try to find all GameObjects tagged as "Terrain"
+            try
             {
-                RegisterTerrainObject(terrainGO.transform);
-            }
+                GameObject[] terrainGOs = GameObject.FindGameObjectsWithTag("Terrain");
 
-            Debug.Log($"[TerrainManager] Found {_terrainObjects.Count} terrain objects");
+                foreach (GameObject terrainGO in terrainGOs)
+                {
+                    RegisterTerrainObject(terrainGO.transform);
+                }
+
+                Debug.Log($"[TerrainManager] Found {_terrainObjects.Count} terrain objects");
+            }
+            catch (UnityException)
+            {
+                // "Terrain" tag doesn't exist - this is OK for a test scene without terrain
+                Debug.LogWarning("[TerrainManager] 'Terrain' tag not defined. No terrain objects will be loaded. Add the tag in Project Settings > Tags and Layers if you want terrain features.");
+            }
         }
 
         /// <summary>

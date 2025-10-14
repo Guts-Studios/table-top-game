@@ -128,7 +128,7 @@ namespace Warslammer.Units
         /// <summary>
         /// Health percentage (0.0 to 1.0)
         /// </summary>
-        public float HealthPercentage => (float)_currentHealth / _maxHealth;
+        public float HealthPercentage => _maxHealth > 0 ? (float)_currentHealth / _maxHealth : 0f;
 
         private UnitData _baseData;
         #endregion

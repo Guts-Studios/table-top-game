@@ -20,7 +20,7 @@ namespace Warslammer.Core
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<PhaseManager>();
+                    _instance = FindFirstObjectByType<PhaseManager>();
                 }
                 return _instance;
             }

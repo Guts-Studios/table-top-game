@@ -19,7 +19,7 @@ namespace Warslammer.Input
             {
                 if (_instance == null)
                 {
-                    _instance = FindObjectOfType<InputManager>();
+                    _instance = FindFirstObjectByType<InputManager>();
                 }
                 return _instance;
             }
@@ -163,9 +163,14 @@ namespace Warslammer.Input
                 case TouchPhase.Moved:
                     if (_isPointerDown)
                     {
-                        Vector3 currentWorldPos = GetWorldPosition(touch.position);
-                        OnPointerMove?.Invoke(currentWorldPos);
-                        _unitSelector?.OnPointerMove(currentWorldPos);
+                        // Check if drag exceeds threshold
+                        float dragDistance = Vector2.Distance(touch.position, _pointerDownPosition);
+                        if (dragDistance > _touchDragThreshold)
+                        {
+                            Vector3 currentWorldPos = GetWorldPosition(touch.position);
+                            OnPointerMove?.Invoke(currentWorldPos);
+                            _unitSelector?.OnPointerMove(currentWorldPos);
+                        }
                     }
                     break;
 

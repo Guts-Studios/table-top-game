@@ -27,7 +27,7 @@ namespace Warslammer.Core
         public void SetupGameManager()
         {
             // Check if GameManager already exists
-            GameManager existingManager = FindObjectOfType<GameManager>();
+            GameManager existingManager = FindFirstObjectByType<GameManager>();
             if (existingManager != null)
             {
                 Debug.Log("[BootstrapSetup] GameManager already exists in scene");
