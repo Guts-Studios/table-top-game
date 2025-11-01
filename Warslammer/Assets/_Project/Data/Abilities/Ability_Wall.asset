@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dad2a53dd10b72428fccb7f30647296, type: 3}
+  m_Name: Ability_Wall
+  m_EditorClassIdentifier: Assembly-CSharp::Warslammer.Data.AbilityData
+  abilityName: Stone Wall
+  abilityID: stone_wall
+  description: Summon a stone wall to block movement. (Placeholder - wall spawning
+    not yet implemented)
+  abilityType: 1
+  timing: 3
+  actionPointCost: 1
+  cooldownTurns: 4
+  healthCost: 0
+  rangeType: 1
+  range: 6
+  areaOfEffect: 0
+  canTargetAllies: 0
+  canTargetEnemies: 0
+  requiresLineOfSight: 1
+  damage: 0
+  damageType: 0
+  healing: 0
+  duration: 3
+  attackModifier: 0
+  defenseModifier: 0
+  movementModifier: 0
+  armorModifier: 0
+  appliesStun: 0
+  appliesPoison: 0
+  appliesKnockback: 0
+  knockbackDistance: 0
+  specialRules: 'PLACEHOLDER: Would create a wall obstacle. Not yet implemented in
+    Phase 6.'
+  usableInMelee: 0
+  endsActivation: 0
+  abilityIcon: {fileID: 0}
+  vfxPrefab: {fileID: 0}
+  soundEffect: {fileID: 0}
+  aiPriority: 4
+  aiMinHealthPercent: 0
+  aiMaxHealthPercent: 100

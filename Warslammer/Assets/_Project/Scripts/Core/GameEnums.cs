@@ -38,6 +38,20 @@ namespace Warslammer.Core
     }
 
     /// <summary>
+    /// Faction types for armies and units
+    /// </summary>
+    public enum FactionType
+    {
+        None,           // Neutral/no faction
+        Empire,         // Human empire (placeholder)
+        Chaos,          // Chaos forces (placeholder)
+        Eldar,          // Space elves (placeholder)
+        Orks,           // Greenskins (placeholder)
+        Necrons,        // Undead robots (placeholder)
+        Tau             // Tech aliens (placeholder)
+    }
+
+    /// <summary>
     /// Types of abilities that units can have
     /// </summary>
     public enum AbilityType

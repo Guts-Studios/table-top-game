@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dad2a53dd10b72428fccb7f30647296, type: 3}
+  m_Name: Ability_Shield
+  m_EditorClassIdentifier: Assembly-CSharp::Warslammer.Data.AbilityData
+  abilityName: Shield
+  abilityID: shield
+  description: Summon a protective barrier that increases defense for 2 turns.
+  abilityType: 1
+  timing: 3
+  actionPointCost: 1
+  cooldownTurns: 4
+  healthCost: 0
+  rangeType: 1
+  range: 6
+  areaOfEffect: 0
+  canTargetAllies: 1
+  canTargetEnemies: 0
+  requiresLineOfSight: 1
+  damage: 0
+  damageType: 0
+  healing: 0
+  duration: 2
+  attackModifier: 0
+  defenseModifier: 3
+  movementModifier: 0
+  armorModifier: 2
+  appliesStun: 0
+  appliesPoison: 0
+  appliesKnockback: 0
+  knockbackDistance: 0
+  specialRules: Grants +3 defense and +2 armor for 2 turns.
+  usableInMelee: 1
+  endsActivation: 0
+  abilityIcon: {fileID: 0}
+  vfxPrefab: {fileID: 0}
+  soundEffect: {fileID: 0}
+  aiPriority: 7
+  aiMinHealthPercent: 0
+  aiMaxHealthPercent: 50

@@ -89,14 +89,25 @@ Turn-based fantasy wargame for Unity (mobile-first: Android/iOS/Windows/Mac)
 
 ## 📋 PENDING PHASES (6-12)
 
-### Phase 6: Unit Abilities & Commander System
-- [ ] Implement ability execution system
-- [ ] Create AbilityController for units
-- [ ] Build commander aura system (buffs nearby units)
-- [ ] Design 6 basic spells (nuke, shield, slow, heal, summon, wall)
-- [ ] Create AbilityData assets for each ability
-- [ ] Test ability targeting and effects
-- [ ] Integrate abilities with combat system
+### Phase 6: Unit Abilities & Commander System ✅
+- [x] Implement ability execution system
+- [x] Create AbilityController for units
+- [x] Build commander aura system (buffs nearby units)
+- [x] Design 6 basic spells (nuke, shield, slow, heal, summon, wall)
+- [x] Create AbilityData assets for each ability
+- [x] Test ability targeting and effects (Ready for testing)
+- [x] Integrate abilities with combat system
+
+### Phase 7.5: Combat Card System 🔄
+- [x] Design card system architecture
+- [x] Create CardData ScriptableObject
+- [x] Implement CardManager component (10-card fixed hand)
+- [x] Create standard cards (3 attack +1/+2/+3, 3 defense +1/+2/+3)
+- [x] Create faction-specific card placeholders (4 cards)
+- [x] Integrate cards into combat resolution (CombatCardIntegration)
+- [x] Create test controller for cards (keyboard testing)
+- [ ] Build visual card selection UI (drag-to-play)
+- [ ] Test full card-based combat flow
 
 ### Phase 7: AI Opponent (Utility-Based)
 - [ ] Build UtilityAIBrain system

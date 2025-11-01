@@ -76,6 +76,7 @@ namespace Warslammer.Units
         private UnitStats _stats;
         private UnitMovement _movement;
         private UnitVisuals _visuals;
+        private AbilityController _abilityController;
 
         // State
         private bool _isSelected;
@@ -85,6 +86,11 @@ namespace Warslammer.Units
         /// Radius of unit's base
         /// </summary>
         private float _baseRadius;
+
+        /// <summary>
+        /// Ability controller for this unit
+        /// </summary>
+        public AbilityController AbilityController => _abilityController;
         #endregion
 
         #region ISelectable Implementation
@@ -405,6 +411,7 @@ namespace Warslammer.Units
             _stats = GetComponent<UnitStats>();
             _movement = GetComponent<UnitMovement>();
             _visuals = GetComponent<UnitVisuals>();
+            _abilityController = GetComponent<AbilityController>();
 
             // Get or create base collider
             if (_baseCollider == null)
@@ -510,6 +517,7 @@ namespace Warslammer.Units
             _stats?.OnTurnStart();
             ResetMovement();
             ResetCombat();
+            _abilityController?.OnTurnStart();
 
             Debug.Log($"[Unit] {name} turn started");
         }
@@ -520,6 +528,7 @@ namespace Warslammer.Units
         public void OnTurnEnd()
         {
             _stats?.OnTurnEnd();
+            _abilityController?.OnTurnEnd();
 
             Debug.Log($"[Unit] {name} turn ended");
         }

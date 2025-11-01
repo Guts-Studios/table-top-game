@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dad2a53dd10b72428fccb7f30647296, type: 3}
+  m_Name: Ability_Fireball
+  m_EditorClassIdentifier: Assembly-CSharp::Warslammer.Data.AbilityData
+  abilityName: Fireball
+  abilityID: fireball
+  description: Unleash a massive fireball that explodes on impact, dealing damage
+    to all units in the area.
+  abilityType: 1
+  timing: 3
+  actionPointCost: 1
+  cooldownTurns: 3
+  healthCost: 0
+  rangeType: 1
+  range: 12
+  areaOfEffect: 3
+  canTargetAllies: 0
+  canTargetEnemies: 1
+  requiresLineOfSight: 1
+  damage: 5
+  damageType: 1
+  healing: 0
+  duration: 0
+  attackModifier: 0
+  defenseModifier: 0
+  movementModifier: 0
+  armorModifier: 0
+  appliesStun: 0
+  appliesPoison: 0
+  appliesKnockback: 1
+  knockbackDistance: 1
+  specialRules: AOE damage. Enemies at the center take full damage, reduced by distance.
+  usableInMelee: 0
+  endsActivation: 1
+  abilityIcon: {fileID: 0}
+  vfxPrefab: {fileID: 0}
+  soundEffect: {fileID: 0}
+  aiPriority: 8
+  aiMinHealthPercent: 0
+  aiMaxHealthPercent: 100
